@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f0f6ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100vh;
+}
+
+.logo {
+    text-align: center; /* 使 logo 在水平居中 */
+    margin-bottom: 20px; /* 调整 logo 与按键之间的间距 */
+}
+
+.logo img {
+    display: block; /* 使 img 元素作为块级元素，以便 text-align 生效 */
+    margin: 0 auto; /* 使 logo 图片水平居中 */
+    width: 50px; /* 保持 logo 图片大小 */
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* 让导航栏按键居中 */
+}
+
+nav ul li {
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    display: inline-flex; /* 使用 inline-flex 让图标和文字水平居中 */
+    align-items: center;
+    justify-content: center; /* 确保内容水平居中 */
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px; /* 调整 padding 来向右移动 */
+    width: 100%; /* 确保 a 标签占据父元素的全部宽度 */
+}
+
+nav ul li a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+nav ul li.active a {
+    color: #3578e5;
+}
+
+.settings {
+    margin-top: auto; /* 自动推到 user-profile 下面 */
+    margin-bottom: 10px; /* 减少与底部的距离 */
+    text-align: center; /* 确保设置项按键居中 */
+}
+
+.settings ul {
+    list-style: none;
+    padding: 0;
+}
+
+.settings ul li {
+    margin-bottom: 20px;
+}
+
+.settings ul li a {
+    display: inline-flex; /* 使用 inline-flex 让设置按键和图标水平居中 */
+    align-items: center;
+    justify-content: center; /* 水平居中 */
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.settings ul li a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.user-profile {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 0; /* 缩小用户头像和 settings 的间距 */
+    padding-bottom: 20px; /* 添加一些间距以使其更靠近底部 */
+}
+
+.user-profile img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.user-profile p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.main-content {
+    width: 80%;
+    padding: 40px;
+    background-color: #eaf6ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 28px;
+    color: #3578e5;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.search-bar input {
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+.journey-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.journey-card, .add-new {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* 确保文字在卡片顶部 */
+}
+
+.journey-card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.journey-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.journey-card p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.journey-card button {
+    background-color: transparent;
+    color: #3578e5;
+    border: none; /* 移除按钮边框 */
+    padding: 10px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.journey-card button::after {
+    content: ">>";
+    margin-left: 10px;
+}
+
+.add-new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #ccc;
+    height: 100%;
+}
+
+.add-new button {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.right-arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #3578e5;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}

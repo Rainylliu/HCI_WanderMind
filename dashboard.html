@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderMind Dashboard</title>
+    <link rel="stylesheet" href="./css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边导航栏 -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="./img/logo.svg" alt="WanderMind Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li class="active">
+                        <a href="./dashboard.html"><img src="./img/dashboard-icon.png" alt="Dashboard Icon"> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="./journey-list.html"><img src="./img/journey-icon.png" alt="Journey List Icon"> Journey List</a>
+                    </li>
+                    <li>
+                        <a href="./ai-travel-guide.html"><img src="./img/travel-icon.png" alt="AI Travel Guide Icon"> AI-Travel Guide</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="settings">
+                <ul>
+                    <li>
+                        <a href="#"><img src="./img/settings-icon.png" alt="Settings Icon"> Settings</a>
+                    </li>
+                    <li>
+                        <a href="#"><img src="./img/logout-icon.png" alt="Logout Icon"> Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <img src="./img/profile-pic.png" alt="User Picture">
+                <p>Charlie</p>
+                <p>charlie@email.com</p>
+            </div>
+        </div>
+
+        <!-- 主体内容 -->
+        <div class="main-content">
+            <!-- 顶部欢迎信息和搜索框 -->
+            <div class="header">
+                <h1>Welcome, Charlie! :)</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                    <button class="calendar-btn"><img src="./img/calendar-icon.png" alt="Calendar"></button>
+                </div>
+            </div>
+
+            <!-- 图片轮播区域 -->
+            <div class="carousel">
+                <button class="arrow left-arrow" onclick="prevSlide()"> < </button>
+                <div class="carousel-content">
+                    <img src="./img/carousel-image1.png" alt="Iceland" class="carousel-slide active">
+                    <img src="./img/carousel-image2.png" alt="Japan" class="carousel-slide">
+                    <img src="./img/carousel-image3.png" alt="Mexico" class="carousel-slide">
+                    <p class="carousel-caption">Discover the magic of these destinations.</p>
+                </div>
+                <button class="arrow right-arrow" onclick="nextSlide()"> > </button>
+                <div class="carousel-indicators">
+                    <span class="indicator active" onclick="currentSlide(0)"></span>
+                    <span class="indicator" onclick="currentSlide(1)"></span>
+                    <span class="indicator" onclick="currentSlide(2)"></span>
+                </div>
+            </div>
+
+            <!-- Top Picks 区域 -->
+            <div class="top-picks">
+                <h2>Top Picks 👍</h2>
+                <div class="picks">
+                    <div class="pick">
+                        <img src="./img/beppu.png" alt="Beppu, Japan">
+                        <p>Beppu, Japan</p>
+                    </div>
+                    <div class="pick">
+                        <img src="./img/rotorua.png" alt="Rotorua, New Zealand">
+                        <p>Rotorua, New Zealand</p>
+                    </div>
+                    <div class="pick">
+                        <img src="./img/cancun.png" alt="Cancún, Mexico">
+                        <p>Cancún, Mexico</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 通知区域 -->
+            <div class="notifications">
+                <h2>Notification 🔔</h2>
+                <div class="trip-info">
+                    <p>Your trip is about to begin! Get ready for the adventure!</p>
+                    <p class="date">2024 13th/Oct</p>
+                    <div class="progress">
+                        <span>JFK Airport</span>
+                        <div class="progress-bar">
+                            <span class="progress-indicator"></span>
+                        </div>
+                        <span>Colorado</span>
+                    </div>
+                </div>
+                <div class="tips">
+                    <p>💡 Stay hydrated to avoid altitude sickness.</p>
+                    <p>💡 Layer your clothing — mountain weather can change fast!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript 用于轮播图 -->
+    <script>
+        let slideIndex = 0;
+        let slides = document.querySelectorAll('.carousel-slide');
+        let indicators = document.querySelectorAll('.indicator');
+
+        function showSlide(index) {
+            if (index >= slides.length) {
+                slideIndex = 0;
+            } else if (index < 0) {
+                slideIndex = slides.length - 1;
+            } else {
+                slideIndex = index;
+            }
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                indicators[i].classList.remove('active');
+                if (i === slideIndex) {
+                    slide.classList.add('active');
+                    indicators[i].classList.add('active');
+                }
+            });
+        }
+
+        function nextSlide() {
+            showSlide(slideIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(slideIndex - 1);
+        }
+
+        function currentSlide(index) {
+            showSlide(index);
+        }
+
+        window.onload = function() {
+            setInterval(nextSlide, 3000);
+        };
+    </script>
+</body>
+</html>

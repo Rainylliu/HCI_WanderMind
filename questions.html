@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/questions.css">
+    <title>Travel Questionnaire</title>
+    <script src="./formHandler.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧导航栏 -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="./img/logo.svg" alt="WanderMind">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./dashboard.html"><img src="./img/dashboard-icon.png" alt="Dashboard Icon"> Dashboard</a></li>
+                    <li><a href="./journey-list.html"><img src="./img/journey-icon.png" alt="Journey List Icon"> Journey List</a></li>
+                    <li class="active"><a href="ai-travel-guide.html"><img src="./img/travel-icon.png" alt="AI Travel Guide Icon"> AI-Travel Guide</a></li>
+                </ul>
+            </nav>
+            <div class="settings">
+                <ul>
+                    <li><a href="#"><img src="./img/settings-icon.png" alt="Settings Icon"> Settings</a></li>
+                    <li><a href="#"><img src="./img/logout-icon.png" alt="Logout Icon"> Logout</a></li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <img src="./img/profile-pic.png" alt="Profile Picture">
+                <p>Charlie<br>charlie@mail.com</p>
+            </div>
+        </div>
+
+        <!-- 右侧内容部分 -->
+        <div class="main-content">
+            <h1>Please let me know more...</h1>
+            <p>Answer the following questions to help us better understand your travel preferences and create a personalized trip just for you.</p>
+            
+            <div class="questions-container">
+                <!-- 问题 1 -->
+                <div class="question">
+                    <h2>1. What is your preferred travel destination (city, country, or region)?</h2>
+                    <p>*Feel free to choose any places you are interested in</p>
+                    <input type="text" placeholder="Typing to search">
+                    <p>*If your interested field is not in our list, enter it here</p>
+                    <input type="text" placeholder="Please enter field">
+                </div>
+
+                <!-- 问题 2 -->
+                <div class="question">
+                    <h2>2. What type of accommodation do you prefer?</h2>
+                    <p>I prefer</p>
+                    <input type="text" placeholder="Typing to search">
+                    <p>I'd want to avoid:</p>
+                    <input type="text" placeholder="Typing to search">
+                </div>
+
+                <!-- 问题 3 -->
+                <div class="question">
+                    <h2>3. Tell us a bit about your weather preference</h2>
+                    <p>I prefer</p>
+                    <input type="text" placeholder="Typing to search">
+                </div>
+
+                <!-- 问题 4 -->
+                <div class="question">
+                    <h2>4. What is your preferred mode of transportation?</h2>
+                    <button>Plane</button>
+                    <button>Train</button>
+                    <button>Bus</button>
+                    <button>Car rental</button>
+                    <p>I'd want to avoid:</p>
+                    <button>Plane</button>
+                    <button>Train</button>
+                    <button>Bus</button>
+                    <button>Car rental</button>
+                </div>
+
+                <!-- 问题 5 -->
+                <div class="question">
+                    <h2>5. What is the planned duration of your trip?</h2>
+                    <button>Less than 3 days</button>
+                    <button>3–5 days</button>
+                    <button>6–9 days</button>
+                    <button>10–14 days</button>
+                    <button>More than 2 weeks</button>
+                </div>
+
+                <!-- 问题 6 -->
+                <div class="question">
+                    <h2>6. Do you prefer a relaxed itinerary or a more active and busy schedule?</h2>
+                    <div class="slider-container">
+                        <label>Relaxed</label>
+                        <input type="range" min="1" max="5" value="3" step="1" class="slider">
+                        <label>Busy</label>
+                    </div>
+                </div>
+
+                <!-- 问题 7 -->
+                <div class="question">
+                    <h2>7. What kind of activities are you most interested in?</h2>
+                    <button>Sightseeing</button>
+                    <button>Adventure Sports</button>
+                    <button>Relaxation</button>
+                    <button>Cultural Experiences</button>
+                </div>
+
+                <!-- 问题 8 -->
+                <div class="question">
+                    <h2>8. Do you have any dietary preferences or restrictions?</h2>
+                    <p>I prefer</p>
+                    <input type="text" placeholder="Typing to search">
+                    <p>I'd want to avoid:</p>
+                    <input type="text" placeholder="Typing to search">
+                </div>
+
+                <!-- 问题 9 --> 
+                <div class="question">
+                    <h2>9. What is your overall budget for the trip?</h2>
+                    <div class="slider-container">
+                        <label>Budget friendly</label>
+                        <input type="range" min="500" max="5000" step="100" value="3500" class="budget-slider">
+                        <label>Luxury</label>
+                        <!-- 添加价格范围标记 -->
+                        <div class="price-labels">
+                            <span>$500–$1000</span>
+                            <span>$2000–$3500</span>
+                            <span>$3500–$5000</span>
+                            <span>$5000+</span>
+                        </div>
+                        <!-- 显示当前滑动条值 -->
+                        <div class="slider-value" id="slider-value">$3500</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit 按钮，增加跳转 -->
+            <button class="submit-btn">Submit</button>
+        </div>
+    </div>
+    <!-- JavaScript 用于跳转页面 -->
+    <script>
+        function redirectToLoadingPage() {
+            window.location.href = './loading.html'; // 跳转到 loading.html 页面
+        }
+
+        // 更新滑动条的显示值
+        const budgetSlider = document.querySelector('.budget-slider');
+        const sliderValue = document.getElementById('slider-value');
+
+        budgetSlider.addEventListener('input', function() {
+            // 更新显示的值
+            sliderValue.textContent = `$${budgetSlider.value}`;
+
+            // 计算滑块的位置，并调整值显示框的位置
+            const sliderRect = budgetSlider.getBoundingClientRect();
+            const sliderWidth = sliderRect.width;
+            const thumbWidth = 20; // 滑块的宽度
+            const min = budgetSlider.min;
+            const max = budgetSlider.max;
+            const value = budgetSlider.value;
+
+            // 计算滑块相对于滑动条的百分比
+            const percentage = (value - min) / (max - min);
+
+            // 根据百分比计算显示框的水平位置
+            const offset = percentage * (sliderWidth - thumbWidth) + thumbWidth / 2;
+            
+            // 设置显示框的位置
+            sliderValue.style.left = `${offset}px`;
+        });
+    </script>
+</body>
+</html>

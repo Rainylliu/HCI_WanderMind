@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Guide</title>
+    <link rel="stylesheet" href="./css/ai-travel-guide.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 左侧导航栏 -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="./img/logo.svg" alt="WanderMind Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./dashboard.html"><img src="./img/dashboard-icon.png" alt="Dashboard Icon"> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="./journey-list.html"><img src="./img/journey-icon.png" alt="Journey List Icon"> Journey List</a>
+                    </li>
+                    <li class="active">
+                        <a href="./ai-travel-guide.html"><img src="./img/travel-icon.png" alt="AI Travel Guide Icon"> AI-Travel Guide</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- 底部设置和用户信息 -->
+            <div class="settings">
+                <ul>
+                    <li><a href="#"><img src="./img/settings-icon.png" alt="Settings Icon"> Settings</a></li>
+                    <li><a href="#"><img src="./img/logout-icon.png" alt="Logout Icon"> Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="user-profile">
+                <img src="./img/profile-pic.png" alt="User Avatar">
+                <p>Charlie<br>charlie@mail.com</p>
+            </div>
+        </div>
+
+        <!-- 主体内容 -->
+        <div class="main-content">
+            <div class="welcome-section">
+                <img src="./img/globe-image.png" alt="Globe" class="globe">
+                <h1>Welcome</h1>
+                <p>Do you already have a preferred travel destination in mind?</p>
+            </div>
+
+            <!-- 按钮部分，添加跳转功能 -->
+            <div class="buttons-section">
+                <a href="./questions.html" class="button yes-button">Yes, I’ve already decided on a destination.</a>
+                <a href="./questions.html" class="button no-button">No, I’m still considering.</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

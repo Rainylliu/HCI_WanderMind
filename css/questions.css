@@ -1,0 +1,348 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.sidebar {
+    width: 20%;
+    background-color: #f0f6ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100vh;
+}
+
+.logo {
+    text-align: center; /* 使 logo 在水平居中 */
+    margin-bottom: 20px; /* 调整 logo 与按键之间的间距 */
+}
+
+.logo img {
+    display: block; /* 使 img 元素作为块级元素，以便 text-align 生效 */
+    margin: 0 auto; /* 使 logo 图片水平居中 */
+    width: 50px; /* 保持 logo 图片大小 */
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* 让导航栏按键居中 */
+}
+
+nav ul li {
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    display: inline-flex; /* 使用 inline-flex 让图标和文字水平居中 */
+    align-items: center;
+    justify-content: center; /* 确保内容水平居中 */
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px; /* 调整 padding 来向右移动 */
+    width: 100%; /* 确保 a 标签占据父元素的全部宽度 */
+}
+
+nav ul li a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+nav ul li.active a {
+    color: #3578e5;
+}
+
+.settings {
+    margin-top: auto; /* 自动推到 user-profile 下面 */
+    margin-bottom: 10px; /* 减少与底部的距离 */
+    text-align: center; /* 确保设置项按键居中 */
+}
+
+.settings ul {
+    list-style: none;
+    padding: 0;
+}
+
+.settings ul li {
+    margin-bottom: 20px;
+}
+
+.settings ul li a {
+    display: inline-flex; /* 使用 inline-flex 让设置按键和图标水平居中 */
+    align-items: center;
+    justify-content: center; /* 水平居中 */
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.settings ul li a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.user-profile {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 0; /* 缩小用户头像和 settings 的间距 */
+    padding-bottom: 20px; /* 添加一些间距以使其更靠近底部 */
+}
+
+.user-profile img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.user-profile p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* 主体内容 */
+.main-content {
+    width: 80%;
+    padding: 40px;
+    background-color: #eaf6ff;
+    overflow-y: auto;
+}
+
+h1 {
+    font-size: 28px;
+    color: #3578e5;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.questions-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.question {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: 0 auto;
+}
+
+.question h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.question p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.question input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #3578e5;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+button:hover {
+    background-color: #285bb5;
+}
+
+/* 问题6滑动条的样式 */
+.slider-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    position: relative;
+}
+
+/* 滑动条 */
+.slider-container input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #d3d3d3;
+    outline: none;
+    border-radius: 5px;
+    position: relative;
+}
+
+/* 滑动条轨道 */
+.slider-container input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: #3578e5;
+    border-radius: 5px;
+}
+
+/* 滑块样式 */
+.slider-container input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #3578e5;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+/* 问题9滑动条的样式 */
+.budget-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: #d3d3d3;
+    outline: none;
+    border-radius: 5px;
+    position: relative;
+    margin: 10px 0;
+}
+
+/* 问题9滑动条轨道 */
+.budget-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: #3578e5;
+    border-radius: 5px;
+}
+
+/* 问题9滑块样式 */
+.budget-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    border: 2px solid #3578e5;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+/* 问题9当前值的显示框 */
+.slider-value {
+    position: absolute;
+    top: -40px;
+    left: 0; /* 初始左边对齐 */
+    transform: translateX(-50%);
+    background: #ffffff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    color: #333;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+/* 问题9价格范围标记 */
+.price-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+    margin-top: 10px;
+    position: relative;
+}
+
+.price-labels span {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+/* 为问题框容器设置相对定位 */
+.question {
+    position: relative; /* 添加相对定位 */
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* Submit 按钮样式 */
+.submit-btn {
+    display: block; /* 使按钮占据一行 */
+    margin: 20px 0; /* 上下间距 */
+    padding: 10px 20px; /* 调整按钮大小 */
+    background-color: #3578e5;
+    color: white;
+    border: none;
+    border-radius: 10px; /* 缩小圆角 */
+    font-size: 16px; /* 调整字体大小 */
+    cursor: pointer;
+    width: auto; /* 自适应内容 */
+    float: right; /* 让按钮靠右 */
+    text-align: center; /* 文字居中 */
+}
+
+.submit-btn:hover {
+    background-color: #285bb5;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100px;
+    }
+
+    .main-content {
+        width: calc(100% - 100px);
+    }
+}

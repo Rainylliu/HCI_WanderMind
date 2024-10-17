@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journey List</title>
+    <link rel="stylesheet" href="./css/journey-list.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 侧边导航栏 -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="./img/logo.svg" alt="WanderMind Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="./dashboard.html"><img src="./img/dashboard-icon.png" alt="Dashboard Icon"> Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <a href="./journey-list.html"><img src="./img/journey-icon.png" alt="Journey List Icon"> Journey List</a>
+                    </li>
+                    <li>
+                        <a href="./ai-travel-guide.html"><img src="./img/travel-icon.png" alt="AI Travel Guide Icon"> AI-Travel Guide</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- 底部设置和用户信息 -->
+            <div class="settings">
+                <ul>
+                    <li><a href="#"><img src="./img/settings-icon.png" alt="Settings Icon"> Settings</a></li>
+                    <li><a href="#"><img src="./img/logout-icon.png" alt="Logout Icon"> Logout</a></li>
+                </ul>
+            </div>
+
+            <div class="user-profile">
+                <img src="./img/profile-pic.png" alt="User Avatar">
+                <p>Charlie<br>charlie@mail.com</p>
+            </div>
+        </div>
+
+        <!-- 主体内容 -->
+        <div class="main-content">
+            <div class="header">
+                <h1>Journey List</h1>
+                <div class="search-bar">
+                    <input type="text" placeholder="Search">
+                </div>
+            </div>
+
+            <!-- Journey Cards -->
+            <div class="journey-cards">
+                <div class="journey-card">
+                    <img src="./img/netherlands.jpg" alt="Netherlands Image">
+                    <h3>NETHERLANDS</h3>
+                    <p>Amsterdam, The Hague</p>
+                    <p>AUG. 20 - AUG. 24</p>
+                    <button>View my journey</button>
+                </div>
+
+                <div class="journey-card">
+                    <img src="./img/greece.jpg" alt="Greece Image">
+                    <h3>GREECE</h3>
+                    <p>Athens, Santorini</p>
+                    <p>AUG. 19 - AUG. 16</p>
+                    <button>View my journey</button>
+                </div>
+
+                <div class="journey-card">
+                    <img src="./img/italy.jpg" alt="Italy Image">
+                    <h3>ITALY</h3>
+                    <p>Milan</p>
+                    <p>AUG. 15 - AUG. 10</p>
+                    <button>View my journey</button>
+                </div>
+
+                <div class="add-new">
+                    <p>Add New</p>
+                    <a href="./ai-travel-guide.html"><button>+</button></a>
+                </div>
+            </div>
+
+            <!-- 右侧箭头按钮 -->
+            <button class="right-arrow">→</button>
+        </div>
+    </div>
+</body>
+</html>

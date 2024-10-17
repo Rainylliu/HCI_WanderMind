@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f7f7f7;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* 侧边导航栏样式 */
+.sidebar {
+    width: 20%;
+    background-color: #f0f6ff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    height: 100vh;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+}
+
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+nav ul li {
+    margin-bottom: 20px;
+}
+
+nav ul li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+nav ul li a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+nav ul li.active a {
+    color: #3578e5;
+}
+
+.settings {
+    margin-top: auto;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.settings ul {
+    list-style: none;
+    padding: 0;
+}
+
+.settings ul li {
+    margin-bottom: 20px;
+}
+
+.settings ul li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+.settings ul li a img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.user-profile {
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+
+.user-profile img {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.user-profile p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+/* 主体内容 */
+.main-content {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #A3CFF3, #C5DFFA);
+    position: relative;
+}
+
+.loading-section {
+    text-align: center;
+    position: relative;
+}
+
+#animated-circle {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+    transition: opacity 0.2s ease;
+}
+
+h1 {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+p {
+    font-size: 18px;
+    color: #ffffff;
+}
+
+/* 关键词样式 */
+#keywords-container {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 60%; /* 确保关键词容器在 "evaluating your preferences" 下方 */
+    left: 0;
+}
+
+.keyword {
+    position: absolute;
+    font-size: 20px;
+    color: #ffffff;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* 关键词出现的指定位置，避免重复、均匀分布 */
+/* .keyword:nth-child(1) {
+    left: 20%;
+    top: 75%;
+}
+
+.keyword:nth-child(2) {
+    left: 35%;
+    top: 80%;
+}
+
+.keyword:nth-child(3) {
+    left: 50%;
+    top: 75%;
+}
+
+.keyword:nth-child(4) {
+    left: 65%;
+    top: 80%;
+}
+
+.keyword:nth-child(5) {
+    left: 80%;
+    top: 75%;
+} */
+
+/* 关键词浮现动画 */
+@keyframes floatIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

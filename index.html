@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderMind Login/Register</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-section">
+            <div class="logo">
+                <img src="./img/logo.svg" alt="WanderMind Logo">
+                <h1>WanderMind</h1>
+            </div>
+            <h2 id="form-title">Hello!</h2>
+            <p id="form-subtitle">Welcome to WanderMind!</p>
+
+            <div class="tabs">
+                <button class="tab active" id="login-tab" onclick="showLogin()">Login</button>
+                <button class="tab" id="register-tab" onclick="showRegister()">Register</button>
+            </div>
+
+            <!-- 登录表单 -->
+            <form class="login-form" id="login-form">
+                <label for="username">User name</label>
+                <input type="text" id="username" placeholder="Enter your user name">
+                
+                <label for="password">Password</label>
+                <div class="password-field">
+                    <input type="password" id="password" placeholder="Enter your password">
+                    <span class="show-password">&#128065;</span>
+                </div>
+
+                <div class="options">
+                    <label>
+                        <input type="checkbox"> Remember me
+                    </label>
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <!-- 修改为按钮点击跳转到 dashboard.html -->
+                <button type="button" class="login-btn" onclick="window.location.href='dashboard.html'">Log In</button>
+            </form>
+
+            <!-- 注册表单 -->
+            <form class="signup-form" id="register-form" style="display: none;">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="Enter your email address">
+                
+                <label for="username">User name</label>
+                <input type="text" id="register-username" placeholder="Enter your user name">
+                
+                <label for="password">Password</label>
+                <div class="password-field">
+                    <input type="password" id="register-password" placeholder="Enter your password">
+                    <span class="show-password">&#128065;</span>
+                </div>
+
+                <p>If you already have an account, you can <a href="#" onclick="showLogin()">Login here!</a></p>
+
+                <button type="submit" class="signup-btn">Register</button>
+            </form>
+        </div>
+
+        <div class="right-section">
+            <h2>WanderMind: AI-powered travel planner</h2>
+            <p>Everything you need to get into your travel.</p>
+            <img src="./img/plane.png" alt="Plane illustration">
+        </div>
+    </div>
+
+    <script>
+        function showLogin() {
+            document.getElementById('login-form').style.display = 'block';
+            document.getElementById('register-form').style.display = 'none';
+            document.getElementById('login-tab').classList.add('active');
+            document.getElementById('register-tab').classList.remove('active');
+            document.getElementById('form-title').textContent = 'Hello!';
+            document.getElementById('form-subtitle').textContent = 'Welcome to WanderMind!';
+        }
+
+        function showRegister() {
+            document.getElementById('login-form').style.display = 'none';
+            document.getElementById('register-form').style.display = 'block';
+            document.getElementById('login-tab').classList.remove('active');
+            document.getElementById('register-tab').classList.add('active');
+            document.getElementById('form-title').textContent = 'Sign up';
+            document.getElementById('form-subtitle').textContent = 'Welcome to WanderMind!';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Travel Plan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        #travel-plan {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Personalized Travel Plan</h1>
+        <div id="travel-plan"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const travelPlanOutput = document.getElementById('travel-plan');
+            const travelResponse = localStorage.getItem('travelResponse');
+
+            if (travelResponse) {
+                try {
+                    // 解析存储在 localStorage 中的 JSON 响应
+                    const parsedResponse = JSON.parse(travelResponse);
+                    const message = parsedResponse.choices[0].message.content;
+
+                    // 格式化并显示旅行计划
+                    travelPlanOutput.textContent = message;
+                } catch (error) {
+                    console.error('Error parsing travel plan:', error);
+                    travelPlanOutput.textContent = 'Error displaying the travel plan. Please try again.';
+                }
+            } else {
+                travelPlanOutput.textContent = 'No travel plan found. Please complete the questionnaire first.';
+            }
+        });
+    </script>
+    
+</body>
+</html>
