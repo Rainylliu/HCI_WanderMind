@@ -28,18 +28,14 @@
             </nav>
             <div class="settings">
                 <ul>
-                    <li>
-                        <a href="#"><img src="./img/settings-icon.png" alt="Settings Icon"> Settings</a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="./img/logout-icon.png" alt="Logout Icon"> Logout</a>
-                    </li>
+                    <li><a href="#"><img src="./img/settings-icon.png" alt="Settings Icon"> Settings</a></li>
+                    <li><a href="#"><img src="./img/logout-icon.png" alt="Logout Icon"> Logout</a></li>
                 </ul>
             </div>
+
             <div class="user-profile">
-                <img src="./img/profile-pic.png" alt="User Picture">
-                <p>Charlie</p>
-                <p>charlie@email.com</p>
+                <img src="./img/profile-pic.png" alt="User Avatar">
+                <p>Charlie<br>charlie@mail.com</p>
             </div>
         </div>
 
@@ -56,18 +52,22 @@
 
             <!-- 图片轮播区域 -->
             <div class="carousel">
-                <button class="arrow left-arrow" onclick="prevSlide()"> < </button>
+                <button class="arrow left-arrow" onclick="prevSlide()">&#8249;</button>
                 <div class="carousel-content">
                     <img src="./img/carousel-image1.png" alt="Iceland" class="carousel-slide active">
                     <img src="./img/carousel-image2.png" alt="Japan" class="carousel-slide">
                     <img src="./img/carousel-image3.png" alt="Mexico" class="carousel-slide">
+                    <img src="./img/carousel-image4.png" alt="Greece" class="carousel-slide">
+                    <img src="./img/carousel-image5.png" alt="New Zealand" class="carousel-slide">
                     <p class="carousel-caption">Discover the magic of these destinations.</p>
                 </div>
-                <button class="arrow right-arrow" onclick="nextSlide()"> > </button>
+                <button class="arrow right-arrow" onclick="nextSlide()">&#8250;</button>
                 <div class="carousel-indicators">
-                    <span class="indicator active" onclick="currentSlide(0)"></span>
-                    <span class="indicator" onclick="currentSlide(1)"></span>
-                    <span class="indicator" onclick="currentSlide(2)"></span>
+                    <span class="indicator active" onclick="currentSlide(0)">1</span>
+                    <span class="indicator" onclick="currentSlide(1)">2</span>
+                    <span class="indicator" onclick="currentSlide(2)">3</span>
+                    <span class="indicator" onclick="currentSlide(3)">4</span>
+                    <span class="indicator" onclick="currentSlide(4)">5</span>
                 </div>
             </div>
 

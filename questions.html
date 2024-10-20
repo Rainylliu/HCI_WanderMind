@@ -44,16 +44,12 @@
                     <h2>1. What is your preferred travel destination (city, country, or region)?</h2>
                     <p>*Feel free to choose any places you are interested in</p>
                     <input type="text" placeholder="Typing to search">
-                    <p>*If your interested field is not in our list, enter it here</p>
-                    <input type="text" placeholder="Please enter field">
                 </div>
 
                 <!-- 问题 2 -->
                 <div class="question">
                     <h2>2. What type of accommodation do you prefer?</h2>
                     <p>I prefer</p>
-                    <input type="text" placeholder="Typing to search">
-                    <p>I'd want to avoid:</p>
                     <input type="text" placeholder="Typing to search">
                 </div>
 
@@ -67,11 +63,6 @@
                 <!-- 问题 4 -->
                 <div class="question">
                     <h2>4. What is your preferred mode of transportation?</h2>
-                    <button>Plane</button>
-                    <button>Train</button>
-                    <button>Bus</button>
-                    <button>Car rental</button>
-                    <p>I'd want to avoid:</p>
                     <button>Plane</button>
                     <button>Train</button>
                     <button>Bus</button>
@@ -111,8 +102,6 @@
                 <div class="question">
                     <h2>8. Do you have any dietary preferences or restrictions?</h2>
                     <p>I prefer</p>
-                    <input type="text" placeholder="Typing to search">
-                    <p>I'd want to avoid:</p>
                     <input type="text" placeholder="Typing to search">
                 </div>
 
@@ -171,6 +160,25 @@
             // 设置显示框的位置
             sliderValue.style.left = `${offset}px`;
         });
+
+        // 添加点击事件给所有问题4、5、7的按钮
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.question button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // 先清除该问题中其他按钮的选中状态
+                    const parentQuestion = button.closest('.question');
+                    const siblingButtons = parentQuestion.querySelectorAll('button');
+
+                    siblingButtons.forEach(sibling => sibling.classList.remove('selected'));
+
+                    // 为当前点击的按钮添加选中状态
+                    button.classList.add('selected');
+                });
+            });
+        });
     </script>
+
 </body>
 </html>
